@@ -1,0 +1,96 @@
+#------------------------------------------
+# install
+#------------------------------------------
+# add '. ~/startx/my_bashrc' in ~/.bashrc
+
+
+#------------------------------------------
+#       global
+#------------------------------------------
+export MAC=64
+export SVN_EDITOR=vim                                                                                  
+export TMOUT=864000   
+export CLICOLOR=1
+
+alias grep='grep --color'
+alias ggg='/opt/compiler/gcc-4.8.2/bin/g++ -std=c++11 '
+alias gmaster='git push origin HEAD:refs/for/master'
+alias ss='screen'
+
+#------------------------------------------
+#       hdfs-agent
+#------------------------------------------
+export LOG_DIR=/home/caohaijun/usr/local/hdfs-agent-1.1.14/peta-agent/log
+alias start-hdfs-agent='cd /home/caohaijun/usr/local/hdfs-agent-1.1.14/peta-agent && bin/start-hdfs-agent.sh'
+alias stop-hdfs-agent='cd /home/caohaijun/usr/local/hdfs-agent-1.1.14/peta-agent && bin/stop-hdfs-agent.sh'
+
+#------------------------------------------
+#       hadoop                                                                                                
+#------------------------------------------
+MULAN_HOME=/home/caohaijun/usr/local/hadoop-client-mulan/hadoop
+#alias mulan='${MULAN_HOME}/bin/hadoop fs'
+function mulan() { ${MULAN_HOME}/bin/hadoop fs $@; }
+
+export HADOOP_HOME=$MULAN_HOME
+
+KHAN_HOME=/home/caohaijun/usr/local/hadoop-client-khan/hadoop
+function khan() { ${KHAN_HOME}/bin/hadoop fs $@; }
+
+THANG_HOME=/home/caohaijun/usr/local/hadoop-client-thang/hadoop                            
+function thang() { ${THANG_HOME}/bin/hadoop fs $@; }                                                   
+
+LV_HOME=/home/caohaijun/usr/local/hadoop-client-lvliang/hadoop                                  
+function lv() { ${LV_HOME}/bin/hadoop fs $@; }
+
+BAIHUA_HOME=/home/caohaijun/usr/local/hadoop-client-baihua/hadoop                                  
+function baihua() { ${BAIHUA_HOME}/bin/hadoop fs $@; }
+
+FEED_VEDIO_HOME=/home/caohaijun/usr/local/hadoop-client-feed-vedio/hadoop
+function fv() { ${BAIHUA_HOME}/bin/hadoop fs $@; }
+
+WUTAI_HOME=/home/caohaijun/usr/local/hadoop-client-wutai/hadoop
+function wt() { ${WUTAI_HOME}/bin/hadoop fs $@; }
+
+LIZHU_HOME=/home/caohaijun/usr/local/hadoop-client-lizhu/hadoop
+function lz() { ${LIZHU_HOME}/bin/hadoop fs $@; }
+
+LIZHU_DMP_HOME=/home/caohaijun/usr/local/hadoop-client-lizhu-dmp/hadoop
+function lzdmp() { ${LIZHU_DMP_HOME}/bin/hadoop fs $@; }
+
+TIANQI_HOME=/home/caohaijun/usr/local/hadoop-client-tianqi/hadoop
+function tq() { ${TIANQI_HOME}/bin/hadoop fs $@; }
+
+export PATH=$MULAN_HOME/bin:$PATH
+
+#------------------------------------------
+#       open-mpi
+#------------------------------------------
+OMPI_HOME=/home/caohaijun/usr/local/ompi-1.4.1-installed
+export PATH=$OMPI_HOME/bin:$PATH                                                                    
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OMPI_HOME/lib:$OMPI_HOME/lib/openmpi:$LD_LIBRARY_PATH      
+export LIBRARY_PATH=$LIBRARY_PATH:$OMPI_HOME/lib:$OMPI_HOME/lib/openmpi:$LIBRARY_PATH            
+export CPATH=$OMPI_HOME/include:$CPATH                                                              
+export C_INCLUDE_PATH=$OMPI_HOME/include:$C_INCLUDE_PATH 
+
+#------------------------------------------
+#      smart_hpc_client, for qdel
+#------------------------------------------
+HPC_HOME=/home/caohaijun/usr/local/smart_client                                                 
+export PATH=${HPC_HOME}/bin:$PATH
+
+#------------------------------------------
+#      scmtools
+#------------------------------------------
+# for hubble tool
+PATH=~/localbuild_other_tools/scmtools/usr/bin:$PATH
+export PATH
+
+#------------------------------------------
+#      ctags
+#------------------------------------------
+export PATH=/home/caohaijun/usr/local/ctags-5.6/bin:$PATH 
+
+#------------------------------------------
+#      for python-yaml
+#------------------------------------------
+export PATH=/home/caohaijun/.jumbo/bin:$PATH

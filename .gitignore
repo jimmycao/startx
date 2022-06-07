@@ -1,0 +1,15 @@
+*~
+*.swp
+tags
+tags
+*.markdown
+*.zip
+note.txt
+tags
+.hg*
+tmp/*
+/doc/tags
+*.swp
+*.vmb
+doc/tags
+/README.html
